@@ -1,10 +1,10 @@
 # Site settings
-title: 静波时光
+title: Jerome Blog
 header-img: img/home-bg.jpg
 email: jingbolee@foxmail.com
 copyright_name: Your/Project/Corporate Name
 description: "Write your site description here. It will be used as your sites meta description as well!"
-baseurl: "/jingbolee.github.io"
+baseurl: ""
 url: "http://www.lijingbo.cc"
 github_username:  jingbolee
 email_username:  jingbolee@foxmail.com
