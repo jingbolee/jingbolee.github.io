@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Android中的那些Manager们"
+title:      "Android 中的那些 Manager 们"
 subtitle:   "各种各样的Manager"
-date:       2016-05-09 12:00:00
+date:       2016-05-09 
 author:     "Jerome"
 header-img: "img/post-bg-06.jpg"
 ---
