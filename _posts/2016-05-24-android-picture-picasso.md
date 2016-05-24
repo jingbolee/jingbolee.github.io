@@ -8,16 +8,16 @@ header-img: "img/post-bg-06.jpg"
 ---
 
 
-#开源库-图片-Picasso
+# 开源库-图片-Picasso
 
-###简介：Picasso是Square公司开源的一个Android图形缓存库，可以实现图片下载和缓存功能。
+### 简介：Picasso是Square公司开源的一个Android图形缓存库，可以实现图片下载和缓存功能。
   
 1. [GitHub: https://github.com/square/picasso](https://github.com/square/picasso)  
 2. [官网：http://square.github.io/picasso/](http://square.github.io/picasso/)
 3. [javadoc:http://square.github.io/picasso/2.x/picasso/](http://square.github.io/picasso/2.x/picasso/)
 
 
-###加入到项目(Android Studio)：
+### 加入到项目(Android Studio)：
 
 
 - 在项目的build.gradle的dependencies{ }中添加：
@@ -26,7 +26,7 @@ header-img: "img/post-bg-06.jpg"
 
 
 
-###介绍和使用：
+### 介绍和使用：
 
 
 -  一行代码把网络图片加载到imageView中：
@@ -107,7 +107,7 @@ header-img: "img/post-bg-06.jpg"
 
 
 
-###自己使用情况：
+### 自己使用情况：
 
 需求：网络图片放在轮播大图里，要求宽匹配设备宽，高显示为200dp，在没有图片或者加载失败时显示一张默认图片
 
