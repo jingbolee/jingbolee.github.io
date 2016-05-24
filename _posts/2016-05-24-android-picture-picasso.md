@@ -12,9 +12,9 @@ header-img: "img/post-bg-06.jpg"
 
 ### 简介：Picasso是Square公司开源的一个Android图形缓存库，可以实现图片下载和缓存功能。
   
-1. [GitHub: https://github.com/square/picasso](https://github.com/square/picasso)  
-2. [官网：http://square.github.io/picasso/](http://square.github.io/picasso/)
-3. [javadoc:http://square.github.io/picasso/2.x/picasso/](http://square.github.io/picasso/2.x/picasso/)
+1. [GitHub](https://github.com/square/picasso)  
+2. [官网](http://square.github.io/picasso/)
+3. [javadoc](http://square.github.io/picasso/2.x/picasso/)
 
 
 ### 加入到项目(Android Studio)：
@@ -32,7 +32,9 @@ header-img: "img/post-bg-06.jpg"
 -  一行代码把网络图片加载到imageView中：
 
 			Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+
 ![](http://www.jcodecraeer.com/uploads/20140731/67391406772378.png)
+
 - Picasso不仅实现了图片异步加载的功能，还解决了android中加载图片时需要解决的一些常见问题：
 	
 	1. 在adapter中需要取消已经不在视野范围的ImageView图片资源的加载，否则会导致图片错位，Picasso已经解决了这个问题。
@@ -45,6 +47,7 @@ header-img: "img/post-bg-06.jpg"
 
 1. Adapter中的下载：Adapter的重用会被自动检测到，Picasso会取消上次的加载
 
+
 		@Override 
  		public void getView(int position, View convertView, ViewGroup parent) {
 		  SquaredImageView view = (SquaredImageView) convertView;
@@ -55,7 +58,9 @@ header-img: "img/post-bg-06.jpg"
 		
 		  Picasso.with(context).load(url).into(view);
 		}
+
 2. 图片转换：转换图片以适应布局大小并减少内存占用
+
 
 		Picasso.with(context)
 		  .load(url)
@@ -63,7 +68,9 @@ header-img: "img/post-bg-06.jpg"
 		  .centerCrop()
 		  .into(imageView)	 
 
+
 3. 还可以自定义转换：
+
 
 		 public class CropSquareTransformation implements Transformation {
 		    @Override 
@@ -97,6 +104,7 @@ header-img: "img/post-bg-06.jpg"
 		Picasso.with(context).load(R.drawable.landing_screen).into(imageView1);
 		Picasso.with(context).load("file:///android_asset/DvpvklR.png").into(imageView2);
 		Picasso.with(context).load(new File(...)).into(imageView3);
+
 6. 调试支持：调用函数 setIndicatorsEnabled(true) 可以在加载的图片左上角显示一个 三角形 ，不同的颜色代表加载的来源
 
 	- 红色：代表从网络下载的图片
