@@ -7,6 +7,15 @@ author:     "Jerome"
 header-img: "img/post-bg-06.jpg"
 ---
 
+通过查看Context的源码，发现了
+
+	public abstract Object getSystemService(String name);
+方法说明：有名称来获取系统级服务的句柄（handler）,根据请求的名字不同，返回的对象也不同。
+目前可用的名称有：
+
+* WindowManager 
+* Context.WINDOW_SERVICE获取到系统顶级窗口管理器，可以定制Window
+
 * **AssetManager** 提供一个对app原始资源的访问  
 获取实例：`getAssets()`
 
