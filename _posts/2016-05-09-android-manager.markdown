@@ -63,3 +63,8 @@ Android提供三个可选：
 
 * **LoaderManager**  
 [官网](http://developer.android.com/intl/zh-cn/reference/android/app/LoaderManager.html)
+
+* **InputMethodManager**获取输入法相关的对象，该对象主要用于对输入法的操作。
+	
+		InputMethodManager methodManager  =
+	        (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
