@@ -1,12 +1,11 @@
 ---
 layout:     post
 title:      "AppBar 的学习和使用"
-subtitle:   "Annotation"
-date:       2016-05-11 
+subtitle:   "Toolbar"
+date:       2016-06-26 
 author:     "Jerome"
 header-img: "img/post-bg-06.jpg"
 ---
-
 
 ## Android 5.0 及以上版本不同控件的认识
 
