@@ -16,7 +16,7 @@ header-img: "img/post-bg-06.jpg"
 ## 设置 StatusBar ， AppBar ， NavigationBar 颜色统一
 
 1. 主题设置
-	- 因为使用 Toolbar ，所以需要把 ActionBar 等隐藏，设置使用 style 的属性
+	- 因为使用 Toolbar ，所以需要把 ActionBar 等隐藏，设置 style 的属性
 
 			<item name="windowActionBar">false</item>
 	 		<item name="android:windowNoTitle">true</item>
@@ -64,6 +64,13 @@ header-img: "img/post-bg-06.jpg"
 
 		toolbar.setNavigationIcon(R.drawable.desktop_mac_black_24dp);
 
+- 给 NavigationIcon 设置一个点击事件
+
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+		      @Override public void onClick(View v) {
+		          Toast.makeText(MainActivity.this,"Navigation",Toast.LENGTH_SHORT).show();
+		      }
+		    });
 ## 设置 Appbar 的 menu 及动作
 
 1. menu，需要先在 res/menu/menu_main.xml 定义：
