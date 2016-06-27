@@ -47,7 +47,7 @@ header-img: "img/post-bg-06.jpg"
 通过以上步骤就可以设置颜色保持统一。
 
 ## 设置 ToolBar 的属性
-- 首先在代码中获取的 ToolBar 的对象。
+- 首先在代码中获取的 ToolBar 的对象。设置
 
   		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar); 
 - 设置 Logo
@@ -70,6 +70,12 @@ header-img: "img/post-bg-06.jpg"
 		          Toast.makeText(MainActivity.this,"Navigation",Toast.LENGTH_SHORT).show();
 		      }
 		    });
+
+- 去掉系统给 ActionBar 设置的默认的 title
+
+		ActionBar actionBar=getSupportActionBar();
+	    actionBar.setDisplayShowTitleEnabled(false);
+
 ## 设置 Appbar 的 menu 及动作
 
 1. menu，需要先在 res/menu/menu_main.xml 定义：
@@ -198,10 +204,13 @@ header-img: "img/post-bg-06.jpg"
 		      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 		      app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 	      />
+
 	- android:paddingTop 的大小的确定：
 	    - 在 4.4 版本之前 Android 是不可以自定义状态栏的。
 		- 在 4.4 版本 Android 推出了一个透明状态栏的概念，使手机最顶部的状态栏的颜色全透明，并且颜色可以定义。所以 **4.4 版本：android:paddingTop 为 0dp**
 		- 5.0 推出了 Material Design，这个时候的状态栏就变成了半透明的颜色。通过看源码得知 **5.0 以上版本：android:paddingTop 为 25dp**
+
+
 	- android:paddingTop 的设置：
 		- values-> dimens，toolbar_padding_top 变量值为 0dp
 		- values-v19-> dimens，toolbar_padding_top 变量值为 25dp
@@ -222,6 +231,7 @@ header-img: "img/post-bg-06.jpg"
 		      android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
 		      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 	      />
+
 	> 注意：当 android:layout_height 直接设置为 ?attr/actionBarSize ， 会造成 StatusBar 覆盖了 ToolBar 。所以需要先设置 layout_height ，然后再设置 minHeight
 
 
