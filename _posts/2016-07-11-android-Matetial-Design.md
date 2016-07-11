@@ -140,6 +140,8 @@ child 是指需要应用 behavior 的 View ，dependency 担任触发 behavior �
 	- exitUntilCollapsed：向上移出屏幕时，View 会一直收缩到最小高度后，再移出屏幕，但可以固定Toolbar一直在上面。
 	> AppbarLayout 的子 View 不设置任何的 flag ，那么就会一直可见。  
 	> snap 和 enterAlwaysCollapsed 使用感觉比较的像，都是向上滑动，隐藏，向下滑动到视图顶部的时候，才显示。
+
+
 ### CollapsingToolbarLayout
 - CollapsingToolbarLayout 作用是提供了一个可以折叠的 Toolbar ,它继承 FrameLayout,给它设置 layout_scrollFlags ，可以控制包含在 CollapsingToolbarLayout 中的控件（如：ImageView、Toolbar）在响应 layout_behavior 事件时做出相应的 scrollFlags 滚动事件（移除屏幕或固定在屏幕顶端）
 - CollapsingToolbarLayout 的属性：
