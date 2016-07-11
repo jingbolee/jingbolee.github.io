@@ -157,7 +157,8 @@ child 是指需要应用 behavior 的 View ，dependency 担任触发 behavior �
 			- parallax：设置为这个模式时，在内容滚动时，CollapsingToolbarLayout 中的 View （比如 ImageView )也可以同时滚动，实现视差滚动效果，通常和layout_collapseParallaxMultiplier (设置视差因子)搭配使用。
 		- app:layout_collapseParallaxMultiplier (视差因子)： 设置视差滚动因子，值为：0~1。
 
-
+    - 一般在 AppBarLayout 中的 ImageView 会用 CollapsingToolbarLayout包裹，然后设置 ImageView 的属性，使上下滑动的时候，出现视差滚动效果
+    - Demo:http://www.cnblogs.com/wingyip/p/4609891.html
 
 ### 示例代码
 
@@ -452,7 +453,7 @@ Snackbar支持滑动消失，类似通知栏的消息；
 > 注意：不能同时显示多个Snackbar
 
 >
-> http://www.jianshu.com/p/a506ee4afecb
+> 关于CoordinatorLayout与Behavior的一点分析:http://www.jianshu.com/p/a506ee4afecb
 > https://www.aswifter.com/2015/11/12/mastering-coordinator/
 > https://segmentfault.com/a/1190000005024216?utm_source=Weibo&utm_medium=shareLink&utm_campaign=socialShare&from=singlemessage&isappinstalled=0
 > http://www.open-open.com/lib/view/open1438265746378.html
