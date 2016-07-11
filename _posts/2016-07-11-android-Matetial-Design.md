@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Material Design 控件的整理和使用"
-subtitle:   "Toolbar"
+subtitle:   "Matetial Design"
 date:       2016-07-11 
 author:     "Jerome"
 header-img: "img/post-bg-06.jpg"
