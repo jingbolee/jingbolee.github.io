@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Android 动画"
+title:      "Android 6.0 Permission"
 subtitle:   "Android 6.0 运行时权限"
 date:       2016-07-19 
 author:     "Jerome"
@@ -8,7 +8,9 @@ header-img: "img/post-bg-06.jpg"
 ---
 
 ## Android Perimission
+
 ### 运行时权限分析
+
 - Android 6.0 开始，引入了运行时权限，Requesting Permissions at Run Time。  
 - 从 Android 6.0 开始，权限分为普通权限 normal 和危险权限 dangerous
 - 普通权限 normal 和危险权限 dangerous 都需要在清单文件中注册。
@@ -55,6 +57,7 @@ header-img: "img/post-bg-06.jpg"
 - WRITE_SYNC_SETTINGS
 
 #### 危险权限 dangerous
+
 
 		| Permission Group       | Permissions    |
 		| -------------|:------------:|
@@ -165,17 +168,6 @@ header-img: "img/post-bg-06.jpg"
 - 只有 requestPermissions() 方法调用以后，才会回调 onRequestPermissionsResult() 方法
 - 检查权限的方法 ContextCompat.checkSelfPermission() 传入的第一个参数 可以是任何的 context ,而不必是 activity
 - 请求权限的方法 ActivityCompat.requestPermissions() 传入的第一个参数，必须是 activity。因为需要在 Window 上显示权限对话框，所以必须传入 activity。
-
-
-
-
-
-
-
-
-
-
-
 
 
 
