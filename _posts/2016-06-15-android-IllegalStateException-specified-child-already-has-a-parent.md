@@ -151,6 +151,11 @@ header-img: "img/post-bg-06.jpg"
 
 - 根据关键代码1和关键代码3，可以得知：当第二个参数不为 null 和第三个参数为 true，加载的布局会依附于 parent，并返回 parent。根据 Bug 的描述，得知子 view 已经有 parent 了，在依附之前应该先调用 parent 的 removeView() 方法。所以造成该 Bug 的问题就是不能依附于 parent 了。所以当 inflate() 方法参数第二个为 null 或者第三个参数为 false 的时候，就都不会出现该 Bug。
 
+- inflate()参数情况：
+	1. 如果root为null，attachToRoot将失去作用，设置任何值都没有意义。
+	2. 如果root不为null，attachToRoot设为true，则会给加载的布局文件的指定一个父布局，即root。
+	3. 如果root不为null，attachToRoot设为false，则会将布局文件最外层的所有layout属性进行设置，当该view被添加到父view当中时，这些layout属性会自动生效。
+	4. 在不设置attachToRoot参数的情况下，如果root不为null，attachToRoot参数默认为true。
 
 ## 补充
 
@@ -185,3 +190,9 @@ header-img: "img/post-bg-06.jpg"
 			View view = View.inflate(mContext,R.layout.list_item_tel_code,parent); 
 
 - 以上几种方法，不管如何使用，都会调用到 LayoutInflater 中 inflate() 方法。
+
+
+
+> 参考
+> 
+> http://blog.csdn.net/guolin_blog/article/details/12921889
