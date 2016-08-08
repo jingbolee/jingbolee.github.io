@@ -1,10 +1,10 @@
 # Site settings
 title: Jerome Blog
-SEOTitle: 静波的时光 
+SEOTitle: 静波的历程 
 header-img: img/home-bg.jpg
 email: jingbolee@foxmail.com
 copyright_name: Your/Project/Corporate Name
-description: "很早进入IT行业，最近才开始编程。大龄Android开发。"
+description: "很早进入IT行业，最近才开始编程。大龄 Android 开发。"
 baseurl: ""
 url: "http://www.lijingbo.cc"
 github_username:  jingbolee
@@ -14,7 +14,7 @@ email_username:  jingbolee@foxmail.com
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-paginate: 5
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 gems: [jekyll-paginate, jekyll-feed]
