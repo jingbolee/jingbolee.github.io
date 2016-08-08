@@ -1,4 +1,3 @@
-
 ---
 layout:     post
 title:      "Android 绘图基础知识"
@@ -7,7 +6,6 @@ date:       2016-08-08
 author:     "Jerome"
 header-img: "img/post-bg-02.jpg"
 ---
-
 
 
 ## Android 绘图基础知识
