@@ -13,6 +13,7 @@ header-img: "img/post-bg-06.jpg"
 	- 实现该接口的类可以进行排序，通过实现该接口的 comparaTo() 方法进行比较来排序。
 	- List 或者 Array 中的对象实现了该接口，可以通过工具类 Collections.sort(List) 或者 Arrays.sort(Object[]) 进行排序。
 	- 实现该接口的对象，可以作为 SortedMap 实现类的 key 或者作为 SortedSet 实现类的元素，不需要再指定 Comparator 接口的实现类。
+	- 用来作为默认比较规则
 
 - 排序
 	- List:Collections.sort(List)
@@ -27,6 +28,7 @@ header-img: "img/post-bg-06.jpg"
 	- 该接口主要是用于 List 或者 Array 中的对象没有实现 Comparable 接口但是需要排序的情况；同时也可以用来对已经实现了 Comparable 接口的对象按照 Comparator 接口实现规则进行排序。
 	- 对 List 或 Array 中的对象进行排序
 	- List 排序通过工具类 Collections.sort(List,Comparator);Array 排序通过工具类 Arrays.sort(Object[], Comparator)，List 或者 Array 中的对象即可以实现 Comparable 接口也可以不实现 Comparable 接口。
+	- 一般用于临时比较规则
 
 - 排序
 	- List:Collections.sort(List,Comparator)
@@ -38,6 +40,7 @@ header-img: "img/post-bg-06.jpg"
 ## 两个接口相同点
 
 - 都是通过工具类 Collections.sort() 和 Arrays.sort() 对 List 和 Array 进行排序。
+- 都是 Java 集合框架的成员
 
 ## 总结
 
