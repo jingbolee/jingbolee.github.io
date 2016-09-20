@@ -183,26 +183,27 @@ header-img: "img/post-bg-06.jpg"
 - 推荐的写法
 	- 使异常类中的成员属性全部为 final 类型的（依据 SonarQube 中的规则）
 
-		public class CustomException extends Exception {
-		    private final int id;
-		    private final String exceptionType;
-		    private final String msgDes;
-		
-		    public int getId() {
-		        return id;
-		    }
-		
-		    public String getExceptionType() {
-		        return exceptionType;
-		    }
-		
-		    public String getMsgDes() {
-		        return msgDes;
-		    }
-		
-		    public CustomException(int id, String msg, String type) {
-		        this.id = id;
-		        this.msgDes = msg;
-		        this.exceptionType = type;
-		    }
-		}	
+
+			public class CustomException extends Exception {
+			    private final int id;
+			    private final String exceptionType;
+			    private final String msgDes;
+			
+			    public int getId() {
+			        return id;
+			    }
+			
+			    public String getExceptionType() {
+			        return exceptionType;
+			    }
+			
+			    public String getMsgDes() {
+			        return msgDes;
+			    }
+			
+			    public CustomException(int id, String msg, String type) {
+			        this.id = id;
+			        this.msgDes = msg;
+			        this.exceptionType = type;
+			    }
+			}	
