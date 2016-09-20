@@ -132,6 +132,7 @@ header-img: "img/post-bg-06.jpg"
 - tryLock() 方法的使用：
 	- InsertData3.java
 
+
 			public class InsertData3 {
 			    private Lock lock = new ReentrantLock();
 			
@@ -156,6 +157,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- LockTest2.java
 
+
 			public class LockTest2 {
 			
 			    public static void main(String[] args){
@@ -174,6 +176,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- 测试结果：（说明：当使用 2 个线程，遍历 5 个数字的时候，没有出现获取锁失败的情况，把遍历修改为 100000 或者在线程中加入 sleep（）以后，可以出现获取锁失败的情况，估计是硬件计算能力比较强造成的，需要进一步测试； 使用复杂的计算方法，可以实现获取锁失败的情况。）
 
+
 			Thread-1 获取锁成功
 			Thread-0 获取锁失败
 			Thread-1 释放锁
@@ -182,26 +185,28 @@ header-img: "img/post-bg-06.jpg"
 
 	- InsertData3.java
 
-		public class InsertData3 {
-		    private Lock lock = new ReentrantLock();
-		
-		    public void insert(Thread thread) {
-		        try {
-		            lock.lockInterruptibly();
-		            System.out.println(thread.getName() + " 获取锁成功");
-		            //增加CPU计算复杂度
-		            for (int i = 0; i < 1000000; i++) {
-		                Math.hypot(Math.pow(924526789, i), Math.cos(i));
-		            }
-		        } catch (Exception e) {
-		        } finally {
-		            lock.unlock();
-		            System.out.println(thread.getName() + " 释放锁");
-		        }
-		    }
-		}
+
+			public class InsertData3 {
+			    private Lock lock = new ReentrantLock();
+			
+			    public void insert(Thread thread) {
+			        try {
+			            lock.lockInterruptibly();
+			            System.out.println(thread.getName() + " 获取锁成功");
+			            //增加CPU计算复杂度
+			            for (int i = 0; i < 1000000; i++) {
+			                Math.hypot(Math.pow(924526789, i), Math.cos(i));
+			            }
+			        } catch (Exception e) {
+			        } finally {
+			            lock.unlock();
+			            System.out.println(thread.getName() + " 释放锁");
+			        }
+			    }
+			}
 
 	- LockTest2.java
+
 
 			public class LockTest2 {
 			
@@ -233,6 +238,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- 测试结果：(说明：获取到锁的线程会一直循环下去，当前 t1 获取到了锁，没有释放锁， t2 无法获取到锁，一直处于等待中，2秒以后调用线程 t2 的 interrupt() 方法，等待中的线程 t2 会响应中断)
 	
+
 			Thread-0 获取锁成功
 			Thread-1 被中断
 			Thread-0 释放锁
@@ -240,6 +246,7 @@ header-img: "img/post-bg-06.jpg"
 ## ReadWriteLock
 
 ### 源码
+
 
 	package java.util.concurrent.locks;
 	
@@ -270,6 +277,7 @@ header-img: "img/post-bg-06.jpg"
 - 使用 synchronized 实现多线程读操作
 	- UnReadWriteLockTest.java
 
+
 			public class UnReadWriteLockTest {
 			
 			    private Object object = new Object();
@@ -287,6 +295,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- Test3.java
 
+
 			public class Test3 {
 			
 			    public static void main(String[] args) {
@@ -303,6 +312,7 @@ header-img: "img/post-bg-06.jpg"
 			}
 
 	- 测试结果:(说明：直到 Thread-0 执行完读操作之后，Thread-1 才能获取到锁，执行读操作)
+
 
 			Thread-0 执行读操作
 			Thread-0 读操作完成
@@ -335,8 +345,10 @@ header-img: "img/post-bg-06.jpg"
 			Thread-1 执行读操作
 			Thread-1 读操作完成
 
+
 - 使用 ReentrantReadWriteLock 实现多线程读操作
 	- ReadWriteLockTest.java
+
 
 			public class ReadWriteLockTest {
 			    private ReadWriteLock rwl = new ReentrantReadWriteLock();
@@ -358,6 +370,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- Test4.java
 
+
 			public class Test4 {
 			
 			    public static void main(String[] args) {
@@ -376,6 +389,7 @@ header-img: "img/post-bg-06.jpg"
 			}
 
 	- 测试结果：（说明：可以看到 Thread-0,Thread-1,Thread-2 三个线程在同时执行读操作，大大的提供了效率）
+
 
 			Thread-0 执行读操作
 			Thread-0 执行读操作
@@ -413,6 +427,7 @@ header-img: "img/post-bg-06.jpg"
 
 	- ReadWriteLockTest.java
 
+
 			public class ReadWriteLockTest {
 			    private ReadWriteLock rwl = new ReentrantReadWriteLock();
 			
@@ -448,7 +463,9 @@ header-img: "img/post-bg-06.jpg"
 			    }
 			}
 
+
 	- Test5.java
+
 
 			public class Test5 {
 			    static ReadWriteLockTest rwlt;
@@ -510,8 +527,10 @@ header-img: "img/post-bg-06.jpg"
 			    }
 			}
 
+
 	- 测试结果：
 		1. 当前线程获取到读锁，其他线程需要写锁，则需要等待当前显示是否读锁
+
 
 				Thread-0 获取到读锁
 				Thread-0 执行读操作
@@ -547,7 +566,9 @@ header-img: "img/post-bg-06.jpg"
 				Thread-1 写操作完成
 				Thread-1 释放写锁
 
+
 		2. 当前线程获取到写锁，其他线程需要写锁，则需要等待当前线程释放写锁
+
 
 				Thread-1 获取到写锁
 				Thread-1 写操作完成
@@ -556,7 +577,9 @@ header-img: "img/post-bg-06.jpg"
 				Thread-0 写操作完成
 				Thread-0 释放写锁
 
+
 		3. 当前线程获取到写锁，其他线程需要读锁，则需要等待当前线程释放写锁
+
 
 				Thread-1 获取到写锁
 				Thread-1 写操作完成
@@ -608,13 +631,16 @@ header-img: "img/post-bg-06.jpg"
 				Thread-0 读操作完成
 				Thread-0 释放读锁
 
+
 - 注意: 读锁和写锁的策略
 	1. 当前线程获取到读锁，其他线程需要读锁，可以直接获取到
 	2. 当前线程获取到读锁，其他线程需要写锁，则需要等待当前线程释放读锁
 	3. 当前线程获取到写锁，其他线程需要写锁，则需要等待当前线程释放写锁
 	4. 当前线程获取到写锁，其他线程需要读锁，则需要等待当前线程释放写锁
 
+
 ## Lock 接口和 synchronized 关键字在锁上的差异
+
 
 - Lock 是一个接口，synchronized 是 Java 的关键字，synchronized 是内置的语言实现
 - synchronized 发生异常的时候，会自动释放线程占有的锁，因此不会导致死锁现象发生；Lock 发生异常的时候，不会主动调用 unLock() 方法释放锁，可能会造成死锁现象，因此使用 Lock 的时候需要使用 try{} catch{} 然后在 finally 中调用 unLock() 方法释放锁。
@@ -632,6 +658,7 @@ header-img: "img/post-bg-06.jpg"
 - 示例代码
 	- Foo1.java
 	
+
 			public class Foo1 {
 			
 			    public synchronized void m1() {
@@ -658,17 +685,22 @@ header-img: "img/post-bg-06.jpg"
 			    }
 			}
 
+
 	- 测试结果
+
 
 			m1执行完毕
 			m2执行完毕
 
+
 	- 分析：方法 m1() 和 m2() 都用 synchronized 修饰，当前线程获取到对象锁执行 m1() 方法，由于 m1() 调用 m2() 而 m2() 也是 synchronized 修饰的，因为 synchronized 的可重入性，当前线程不需要重新申请锁，就可以直接执行 m2() 方法。
+
 
 ### 可中断锁
 
 - 可中断锁：可以响应中断的锁
 - synchronized 不是可中断所；Lock 是可中断锁，Lock 的 lockInterruptibly() 方法提示了可中断性
+
 
 ### 公平锁
 
@@ -677,6 +709,7 @@ header-img: "img/post-bg-06.jpg"
 - synchronized 是不公平锁，它无法保证等待的线程获取锁的顺序
 - ReentrantLock 和 ReentrantReadWriteLock 默认不是公平锁，但是可以设置成公平锁
 	- 源码：
+
 
 		    /**
 		     * Sync object for non-fair locks
@@ -735,7 +768,9 @@ header-img: "img/post-bg-06.jpg"
 		        }
 		    }
 
+
 	- ReentrantLock 的两个构造方法
+
 
 		    public ReentrantLock() {
 		        sync = new NonfairSync();
@@ -751,15 +786,20 @@ header-img: "img/post-bg-06.jpg"
 		        sync = fair ? new FairSync() : new NonfairSync();
 		    }
 
+
 	- 在 ReentrantLock 中定义了 2 个静态内部类，一个是 NotFairSync 一个是 FairSync，分别用来实现非公平锁和公平锁
 	- 通过构造方法实现公平锁
 
+
 			ReentrantLock lock = new ReentrantLock(true);
+
 
 	- 如果参数为 true 表示公平锁，为 false 表示非公平锁。默认无参构造方法表示非公平锁
 	- 可以通过方法:final boolean isFair() 来判断是不是公平锁
 
+
 ### 读写锁
+
 
 - 读写锁将对一个资源的访问分为 2 个锁，一个读锁和一个写锁
 - 有个读锁，可以使得多线程在读锁时提供效率
