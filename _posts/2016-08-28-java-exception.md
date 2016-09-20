@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java 异常"
-subtitle:   "Throwable"
+title:      "Java 异常类"
+subtitle:   "Exception"
 date:       2016-08-26
 author:     "Jerome"
 header-img: "img/post-bg-06.jpg"
@@ -129,4 +129,80 @@ header-img: "img/post-bg-06.jpg"
 				at cc.lijingbo.script.throwabletest.ThrowableTest.test2(ThrowableTest.java:19)
 				... 6 more
 
-	
+
+## 自定义异常类的写法
+
+- 不推荐的写法
+
+
+		public class CustomException extends Exception {
+		    private int id;
+		    private String exceptionType;
+		    private String msgDes;
+		
+		
+		    public int getId() {
+		        return id;
+		    }
+		
+		    public void setId(int id) {
+		        this.id = id;
+		    }
+		
+		    public String getExceptionType() {
+		        return exceptionType;
+		    }
+		
+		    public void setExceptionType(String exceptionType) {
+		        this.exceptionType = exceptionType;
+		    }
+		
+		    public String getMsgDes() {
+		        return msgDes;
+		    }
+		
+		    public void setMsgDes(String msgDes) {
+		        this.msgDes = msgDes;
+		    }
+		
+		    public CustomException() {
+		    }
+		
+		    public CustomException(String msg) {
+		        this.msgDes = msg;
+		    }
+		
+		    public CustomException(int id, String msg, String type) {
+		        this.id = id;
+		        this.msgDes = msg;
+		        this.exceptionType = type;
+		    }
+		}
+
+
+- 推荐的写法
+	- 使异常类中的成员属性全部为 final 类型的（依据 SonarQube 中的规则）
+
+		public class CustomException extends Exception {
+		    private final int id;
+		    private final String exceptionType;
+		    private final String msgDes;
+		
+		    public int getId() {
+		        return id;
+		    }
+		
+		    public String getExceptionType() {
+		        return exceptionType;
+		    }
+		
+		    public String getMsgDes() {
+		        return msgDes;
+		    }
+		
+		    public CustomException(int id, String msg, String type) {
+		        this.id = id;
+		        this.msgDes = msg;
+		        this.exceptionType = type;
+		    }
+		}	
