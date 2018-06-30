@@ -1,6 +1,6 @@
-##Jerome Blog
+## Jerome Blog
 
-###[View Live Jerome Blog &rarr;](http://www.lijingbo.cc)
+### [View Live Jerome Blog &rarr;](http://www.lijingbo.cc)
 
 
 ## Thanks
