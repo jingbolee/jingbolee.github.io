@@ -2,13 +2,13 @@
 title: Jerome Blog
 SEOTitle: 静波的历程 
 header-img: img/home-bg.jpg
-email: jingbolee@foxmail.com
+email: lijingboforever@gmail.com
 copyright_name: Your/Project/Corporate Name
-description: "很早进入IT行业，最近才开始编程。大龄 Android 开发。"
+description: "大龄 Android 开发。"
 baseurl: ""
 url: "http://www.lijingbo.cc"
-github_username:  jingbolee
-email_username:  jingbolee@foxmail.com
+github_username:  李静波
+email_username:  lijingboforever@gmail.com
 
 # Build settings
 markdown: kramdown
